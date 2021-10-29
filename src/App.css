@@ -30,6 +30,10 @@
   object-fit: cover;
   background-attachment: fixed;
 }
+.login-user-img{
+  width: 3.125rem;
+  object-fit: cover;
+}
 /*----------------------- media query ------------------------ */
 
 

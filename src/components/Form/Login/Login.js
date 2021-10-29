@@ -9,11 +9,14 @@ import useAuth from '../../../Hooks/useAuth';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-  const { googleLogin, setUser,setIsLoading } = useAuth();
+  const { googleLogin, setUser, setIsLoading, twitterLogin } = useAuth();
   const location = useLocation();
   const uri = location?.state?.from || "/home";
   const history = useHistory();
 
+
+//google
+  
   const redirectGoogle = () => {
   googleLogin()
     .then((result) => {
@@ -31,6 +34,23 @@ const Login = () => {
     })
 }
 
+  //twitter
+
+  const redirectTwitter = () => {
+    twitterLogin()
+      .then((result) => {
+        history.push(uri);
+        const user = result.user;
+        setUser(user);
+        toast.success("Login Success!!");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
 
 
     return (
@@ -49,7 +69,10 @@ const Login = () => {
               >
                 <img src={googleLogo} alt="" />
               </button>
-              <button className="mx-3 shadow rounded-circle btn">
+              <button
+                onClick={redirectTwitter}
+                className="mx-3 shadow rounded-circle btn"
+              >
                 <img src={twitterLogo} alt="" />
               </button>
             </div>

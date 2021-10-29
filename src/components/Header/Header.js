@@ -53,7 +53,7 @@ const Header = () => {
                     <img
                       src={user?.photoURL}
                       alt=""
-                      className="w-50 d-none d-lg-block rounded-circle mx-auto"
+                      className="login-user-img d-none d-lg-block rounded-circle mx-auto"
                     />
                   )}
                 </div>

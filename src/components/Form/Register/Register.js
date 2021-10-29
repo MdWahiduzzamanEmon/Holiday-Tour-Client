@@ -9,7 +9,7 @@ import useAuth from "../../../Hooks/useAuth";
 import { toast } from "react-toastify";
 const Register = () => {
 
-   const { googleLogin, setUser, setIsLoading } = useAuth();
+   const { googleLogin, setUser, setIsLoading, twitterLogin } = useAuth();
    const location = useLocation();
    const uri = location?.state?.from || "/home";
    const history = useHistory();
@@ -28,11 +28,28 @@ const Register = () => {
        .finally(() => {
          setIsLoading(false);
        });
+  };
+  //twitter
+
+   const redirectTwitter = () => {
+     twitterLogin()
+       .then((result) => {
+         history.push(uri);
+         const user = result.user;
+         setUser(user);
+         toast.success("Login Success!!");
+       })
+       .catch((error) => {
+         toast.error(error.message);
+       })
+       .finally(() => {
+         setIsLoading(false);
+       });
    };
     return (
       <div style={{ backgroundImage: `url(${bg})` }} className="bg-img">
         <div className="container my-5 py-5">
-          <img src={logo} alt="" className="py-5" />
+          <img src={logo} alt="logo" className="py-5" />
           <div className="shadow form-div mx-auto pb-5 pt-3 rounded-pill">
             <div className="mb-4">
               <h3 className="fw-bold text-uppercase">Register</h3>
@@ -43,10 +60,13 @@ const Register = () => {
                 onClick={redirectGoogle}
                 className="mx-3 shadow rounded-circle btn"
               >
-                <img src={googleLogo} alt="" />
+                <img src={googleLogo} alt="google" />
               </button>
-              <button className="mx-3 shadow rounded-circle btn">
-                <img src={twitterLogo} alt="" />
+              <button
+                onClick={redirectTwitter}
+                className="mx-3 shadow rounded-circle btn"
+              >
+                <img src={twitterLogo} alt="twitter" />
               </button>
             </div>
             <div className="mt-4">

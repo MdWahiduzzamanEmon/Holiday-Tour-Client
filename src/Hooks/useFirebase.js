@@ -6,21 +6,28 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
+  TwitterAuthProvider,
 } from "firebase/auth";
 
 firebaseInitialize();
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
 
 const useFirebase = () => {
     const auth = getAuth();
   const [user, setUser] = useState({})
   const [isLoading,setIsLoading]=useState(true)
-// login
+// google login
     const googleLogin = () => {
       setIsLoading(true)
-        return signInWithPopup(auth, provider)
+        return signInWithPopup(auth, googleProvider)
          
-    }
+  }
+  //twitter login
+  const twitterLogin = () => {
+    setIsLoading(true);
+    return signInWithPopup(auth, twitterProvider);
+  }
 //state change
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -47,11 +54,12 @@ const useFirebase = () => {
     }
     return {
       googleLogin,
-        logOut,
-        user,
+      logOut,
+      user,
       setUser,
       setIsLoading,
-      isLoading
+      isLoading,
+      twitterLogin,
     };
 };
 
