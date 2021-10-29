@@ -19,7 +19,7 @@ const T_destinations = () => {
                   setAfterSearch(res.data);
                    setIsSpinner(false);
               });
-       }, );
+       },1000 );
 }
         , [])
     
