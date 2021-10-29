@@ -36,7 +36,7 @@ const BookingForm = ({ tripName,price }) => {
     
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="booking-form">
+      <form onSubmit={handleSubmit(onSubmit)} className="booking-form shadow p-3 rounded-3">
         <input
           {...register("name")}
           value={user?.displayName || ""}

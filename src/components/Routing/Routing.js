@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import MyBooking from '../../Pages/MyBooking/MyBooking';
 import Error from '../Error/Error';
 import Booking from '../Form/Booking/Booking';
 import Login from '../Form/Login/Login';
@@ -25,6 +26,9 @@ const Routing = () => {
                     </Route>
                     <Route exact path="/register">
                      <Register/>
+                    </Route>
+                    <Route exact path="/myBooking">
+                     <MyBooking/>
                     </Route>
                     <PrivateRoute exact path="/bookingForm/:id">
                      <Booking/>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Form, Row, Spinner } from "react-bootstrap";
 import design from '../../../images/design.png'
 import Destination from '../Destination/Destination';
+import bg from '../../../images/AOL-BG.png'
 const T_destinations = () => {
     const [places, setPlaces] = useState([]);
     const [isSpinner, setIsSpinner] = useState(true)
@@ -30,7 +31,7 @@ const T_destinations = () => {
         setAfterSearch(searchDestination);
     }
     return (
-      <div>
+      <div style={{ backgroundImage: `url(${bg})` }} >
         <div className="container my-5">
           <section>
             <h2 className="fw-bold py-2">JOURNEY TO EXPLORE NATURE</h2>

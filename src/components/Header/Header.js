@@ -28,14 +28,14 @@ const Header = () => {
                 </Nav.Link>
                 <Nav.Link
                   as={NavLink}
-                  to="/fgf"
+                  to="/myBooking"
                   activeStyle={{
                     fontWeight: "bold",
                     color: "#3598DB",
                   }}
                   className="fw-bold mx-3"
                 >
-                  Pricing
+                  My Booking
                 </Nav.Link>
               </Nav>
               <Nav>
