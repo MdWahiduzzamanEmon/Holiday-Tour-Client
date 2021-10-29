@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import Rating from 'react-rating';
+import { Link } from 'react-router-dom';
 
 const Destination = ({ place }) => {
     const { tripName, rating, days, price, description, image ,_id } = place;
@@ -36,7 +37,10 @@ const Destination = ({ place }) => {
                 </div>
               </div>
               <div className="text-end">
-                <button className="btn btn-warning mt-4">Buy Now</button>
+                <Link to={`/bookingForm/${_id}`}>
+                  {" "}
+                  <button className="btn btn-warning mt-4">Buy Now</button>
+                </Link>
               </div>
             </Card.Body>
           </Card>

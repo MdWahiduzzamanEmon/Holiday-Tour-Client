@@ -34,6 +34,23 @@
   width: 3.125rem;
   object-fit: cover;
 }
+.booking-form{
+  display: flex;
+  flex-direction:column ;
+   width: 80%;
+   margin: 0 auto;
+}
+.booking-form input{
+ border-top: 0;
+ border-left: 0;
+ border-right: 0;
+ border-bottom: 1px solid gray;
+ padding: 10px 5px;
+ margin: 5px 0;
+ background: #eaf0b1;
+ border-radius: 5px;
+outline: none;
+}
 /*----------------------- media query ------------------------ */
 
 
