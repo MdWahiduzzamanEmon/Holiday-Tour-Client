@@ -14,7 +14,7 @@ const BookingForm = ({ tripName,price }) => {
         data["name"] = user?.displayName || "";
         data["tripName"] = tripName || "";
         data["price"] = price || "";
-        data["status"] = "pending";
+        data["status"] = "Pending";
         //post on the database
         axios
           .post("https://fast-ocean-49814.herokuapp.com/bookingInfo", data)
@@ -35,7 +35,8 @@ const BookingForm = ({ tripName,price }) => {
 
     
   return (
-    <div>
+      <div>
+          <h5 className="fw-bold">Booking Details</h5>
       <form onSubmit={handleSubmit(onSubmit)} className="booking-form shadow p-3 rounded-3">
         <input
           {...register("name")}
@@ -66,7 +67,7 @@ const BookingForm = ({ tripName,price }) => {
         />
 
         <div>
-          <button className="btn btn-warning my-3">Submit</button>
+          <button className="btn btn-warning my-3 fw-bold">Submit to booking</button>
         </div>
       </form>
     </div>

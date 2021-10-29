@@ -51,6 +51,11 @@
  border-radius: 5px;
 outline: none;
 }
+.ticket-width{
+  width:50px;
+  margin-top: -25px;
+  margin-left: 10px;
+}
 /*----------------------- media query ------------------------ */
 
 
