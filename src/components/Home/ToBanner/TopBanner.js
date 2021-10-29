@@ -15,8 +15,8 @@ const TopBanner = () => {
               alt="First slide"
             />
             <div className="slider-text">
-              <h2>Let's Enjoy The Travel</h2>
-              <p>
+              <h1>Let's Enjoy The Travel</h1>
+              <p className="py-md-4">
                 I wish you didn’t have to go so soon – but I am so glad for the
                 time we had together. Have a safe journey!
               </p>
@@ -31,8 +31,8 @@ const TopBanner = () => {
             />
 
             <div className="slider-text">
-              <h2>Experience's The Holiday and Travel</h2>
-              <p>
+              <h1>Experience's The Holiday and Travel</h1>
+              <p className="py-md-4">
                 If you’re nervous on your journey, just think about me – because
                 I will absolutely be thinking about you. Travel safe, darling.
               </p>
@@ -46,8 +46,8 @@ const TopBanner = () => {
               alt="Third slide"
             />
             <div className="slider-text">
-              <h2>Save Values Money</h2>
-              <p>
+              <h1>Save Values Money</h1>
+              <p className="py-md-4">
                 I wish you didn’t have to go so soon – but I am so glad for the
                 time we had together. Have a safe journey!
               </p>

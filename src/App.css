@@ -5,7 +5,7 @@
 .slider-text{
  position: absolute;
   right: 15%;
-  bottom: 400px;
+  bottom: 200px;
   left: 15%;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -14,7 +14,11 @@
 }
 .slider-img{
   width: 93.75rem;
-  height: 50rem;
+  height: 37.5rem;
+}
+.destinations-img{
+  height: 200px;
+  object-fit: cover;
 }
 
 
