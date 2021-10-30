@@ -75,7 +75,7 @@ const handleShow = () => setShow(true);
                   <h6 className="mt-3 fw-bold px-2">{user.displayName}</h6>
                 ) : (
                   <Nav.Link as={Link} to="/register">
-                    <button className="btn btn-outline-warning fw-bold">
+                    <button className="btn btn-outline-warning fw-bold text-dark">
                       Register
                     </button>
                   </Nav.Link>
