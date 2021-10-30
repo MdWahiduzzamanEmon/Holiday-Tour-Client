@@ -69,7 +69,7 @@ const ManageData = () => {
               <tbody key={dt?._id} className="text-start">
                 <tr>
                   <td>{dt?.tripName}</td>
-                  <td>{dt?.price}</td>
+                  <td>{dt?.price}$</td>
                   <td className="text-center">
                     <button
                       className="btn"
