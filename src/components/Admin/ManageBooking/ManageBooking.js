@@ -27,7 +27,10 @@ const ManageBooking = () => {
     const handletoOp = (id) => {
         // console.log(statusChng, id);
         axios
-          .put(`http://localhost:5000/status/${id}`, statusChng)
+          .put(
+            `https://fast-ocean-49814.herokuapp.com/status/${id}`,
+            statusChng
+          )
           .then((res) => {
             console.log(res.data);
           });
