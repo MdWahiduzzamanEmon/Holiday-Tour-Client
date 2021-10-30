@@ -7,6 +7,15 @@ import bg from '../../images/AOL-BG.png'
 import BookInfo from './BookInfo';
 import ticket from '../../images/pngegg.png'
 const MyBooking = () => {
+//page scroll
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 100,
+      behavior: "smooth",
+    });
+  }, []);
+
     const { user } = useAuth();
     const [allBookingInfo, setAllBookingInfo] = useState([]);
     React.useEffect(() => {
