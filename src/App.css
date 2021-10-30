@@ -62,6 +62,13 @@ outline: none;
 .status-width{
   width:80px
 }
+.our-service{
+  width:70%;
+}
+.our-service p{
+  width:80%
+}
+
 /*----------------------- media query ------------------------ */
 
 
@@ -75,5 +82,11 @@ outline: none;
 }
 .form-div{
   width: 100%;
+}
+.our-service{
+  width:100%;
+}
+.our-service p{
+  width:100%
 }
 }
