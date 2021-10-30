@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import logo from '../../images/logo.png'
 import Admin from '../Admin/Admin/Admin'
+
 const Header = () => {
   const { user, logOut } = useAuth();
 
@@ -16,6 +17,7 @@ const handleShow = () => setShow(true);
       <div>
         <Navbar collapseOnSelect expand="lg" bg="white" fixed="top">
           <Container>
+            {/* nav logo */}
             <Navbar.Brand as={Link} to="/">
               <img src={logo} alt="" />
             </Navbar.Brand>
@@ -67,6 +69,7 @@ const handleShow = () => setShow(true);
                   Contact
                 </Nav.Link>
               </Nav>
+              {/* user name  */}
               <Nav>
                 {user.uid ? (
                   <h6 className="mt-3 fw-bold px-2">{user.displayName}</h6>
@@ -86,24 +89,33 @@ const handleShow = () => setShow(true);
                     />
                   )}
                 </div>
-
-                <div>
-                  {" "}
-                  <button variant="primary" onClick={handleShow} className=" btn mt-2 fw-bold btn-outline-info text-dark ms-3">
-                    Admin
-                  </button>
-                  <Offcanvas show={show} onHide={handleClose}>
-                    <Offcanvas.Header closeButton>
-                      <Offcanvas.Title>
-                        <h3>Admin Pannel</h3>
-                      </Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                     <Admin></Admin>
-                    </Offcanvas.Body>
-                  </Offcanvas>
-                </div>
-
+                {/* Admin pannel */}
+                {user.uid && (
+                  <div>
+                    {" "}
+                    <button
+                      variant="primary"
+                      onClick={handleShow}
+                      className=" btn mt-2 fw-bold btn-outline-info text-dark ms-3"
+                    >
+                      <i className="fas fa-user-cog me-2"></i>Admin
+                    </button>
+                    <Offcanvas show={show} onHide={handleClose}>
+                      <Offcanvas.Header closeButton className="border-bottom">
+                        <Offcanvas.Title>
+                          <h3 className="fw-bold text-info">
+                            <i className="fas fa-user-cog mx-3"></i>Admin
+                            Pannel--
+                          </h3>
+                        </Offcanvas.Title>
+                      </Offcanvas.Header>
+                      <Offcanvas.Body>
+                        <Admin></Admin>
+                      </Offcanvas.Body>
+                    </Offcanvas>
+                  </div>
+                )}
+                {/* Logout button */}
                 {user.uid && (
                   <button className=" btn" onClick={logOut}>
                     <i className="fas fs-5 fa-sign-out-alt"></i>

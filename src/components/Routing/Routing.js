@@ -9,6 +9,8 @@ import Header from '../Header/Header';
 import Home from '../Home/Home/Home';
 import PrivateRoute from '../Private/PrivateRoute';
 import Admin from "../Admin/Admin/Admin";
+import ManageBooking from '../Admin/ManageBooking/ManageBooking';
+import AddNewEvent from '../Admin/AddNewEvent/AddNewEvent';
 
 const Routing = () => {
     return (
@@ -36,6 +38,12 @@ const Routing = () => {
                     </Route>
                     <Route exact path="/admin">
                      <Admin />
+                    </Route>
+                    <Route exact path="/managebooking">
+                     <ManageBooking />
+                    </Route>
+                    <Route exact path="/addnewevent">
+                     <AddNewEvent />
                     </Route>
                     <PrivateRoute exact path="/myBooking">
                      <MyBooking/>

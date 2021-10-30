@@ -56,6 +56,12 @@ outline: none;
   margin-top: -25px;
   margin-left: 10px;
 }
+.trash{
+  cursor: pointer;
+}
+.status-width{
+  width:80px
+}
 /*----------------------- media query ------------------------ */
 
 

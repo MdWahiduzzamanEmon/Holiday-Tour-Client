@@ -28,7 +28,7 @@ const BookInfo = ({ bookInfo, handleDelete }) => {
           </div>
           <div className="col-md-3 text-center">
             <p className="text-secondary mb-2 text-start">Status-</p>
-            <h5 className="fs-6 bg-info w-50 p-1 rounded-pill">{status}</h5>
+            <h5 className="fs-6 bg-info status-width p-1 rounded-pill">{status}</h5>
           </div>
           <div className="col-md-3">
             <button className="btn btn-warning" onClick={handleDelete}>
