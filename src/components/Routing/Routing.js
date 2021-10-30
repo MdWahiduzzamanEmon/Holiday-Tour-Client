@@ -13,6 +13,7 @@ import ManageBooking from '../Admin/ManageBooking/ManageBooking';
 import AddNewEvent from '../Admin/AddNewEvent/AddNewEvent';
 import Footer from '../Footer/Footer';
 import Contact from '../Contact/Contact';
+import About from '../About/About';
 
 const Routing = () => {
     return (
@@ -33,7 +34,7 @@ const Routing = () => {
                      <Register/>
                     </Route>
                     <Route exact path="/aboutus">
-                     <Register/>
+                     <About/>
                     </Route>
                     <Route exact path="/contactus">
                      <Contact/>

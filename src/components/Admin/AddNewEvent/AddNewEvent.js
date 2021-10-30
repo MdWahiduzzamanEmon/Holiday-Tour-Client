@@ -5,12 +5,13 @@ import { toast } from 'react-toastify';
 import bg from "../../../images/AOL-BG.png";
 import design from "../../../images/design.png";
 const AddNewEvent = () => {
-      const { register, handleSubmit } = useForm();
+      const { register, handleSubmit,reset } = useForm();
     const onSubmit = (data) => {
         axios.post("https://fast-ocean-49814.herokuapp.com/destination",data)
             .then(res => {
                 if (res.data.insertedId) {
-                    toast.success("Data Inserted Successfully!")
+                    toast.success("Data Inserted Successfully!");
+                    reset();
                 }
         })
     };

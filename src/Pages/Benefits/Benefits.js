@@ -1,10 +1,12 @@
 import React from 'react';
 import benefits from "../../images/benefits.jpg";
+import design from '../../images/design.png'
 const Benefits = () => {
     return (
       <div>
         <div className="container py-5 mb-5">
-          <div className="row">
+          <img src={design} alt="" />
+          <div className="row mt-5">
             <div className="col-md-6">
               <div>
                 <img src={benefits} alt="" className=" img-fluid rounded" />
@@ -17,16 +19,16 @@ const Benefits = () => {
                 stress...
               </p>
               <p>
-                <i className="fas fa-plane-departure text-info me-3"></i>Increases
-                creativity...
+                <i className="fas fa-plane-departure text-info me-3"></i>
+                Increases creativity...
               </p>
               <p>
-                <i className="fas fa-plane-departure text-info me-3"></i>Improves low
-                moods...
+                <i className="fas fa-plane-departure text-info me-3"></i>
+                Improves low moods...
               </p>
               <p>
-                <i className="fas fa-plane-departure text-info me-3"></i>Strengthens
-                relationships...
+                <i className="fas fa-plane-departure text-info me-3"></i>
+                Strengthens relationships...
               </p>
             </div>
           </div>
