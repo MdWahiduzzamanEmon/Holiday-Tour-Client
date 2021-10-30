@@ -1,19 +1,25 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Form, Table } from 'react-bootstrap';
+import { Form, Spinner, Table } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import swal from 'sweetalert';
 import bg from "../../../images/AOL-BG.png";
 import design from '../../../images/design.png';
 const ManageBooking = () => {
     const [bookingData, setBookingData] = useState([]);
-    const [statusChng,setStatusChng] = useState('')
+    const [statusChng, setStatusChng] = useState('')
+    const [isSpinner, setIsSpinner]= useState(true)
     useEffect(() => {
-        axios
-          .get("https://fast-ocean-49814.herokuapp.com/bookingInfo")
-          .then((res) => {
-            setBookingData(res.data);
-          });
+        setIsSpinner(true)
+        setTimeout(() => {
+            axios
+              .get("https://fast-ocean-49814.herokuapp.com/bookingInfo")
+              .then((res) => {
+                  setBookingData(res.data);
+                  setIsSpinner(false)
+              });
+        }, 1000);
+        
     },[])
 
     const handleOptionChng = (e) => {
@@ -32,7 +38,12 @@ const ManageBooking = () => {
             statusChng
           )
           .then((res) => {
-            console.log(res.data);
+              console.log(res.data);
+              if (res.data.matchedCount === 1) {
+                  toast.success("Status change successfully!")
+              } else {
+                  toast.error('Something went wrong!')
+              }
           });
         
     }
@@ -40,8 +51,7 @@ const ManageBooking = () => {
     //delete booking
 
     const handleDelete = (id) => {
-      // const singleBooking = allBookingInfo.find(booking => booking._id === id);
-      // console.log(singleBooking);
+     
       swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this !",
@@ -76,50 +86,60 @@ const ManageBooking = () => {
             <img src={design} alt="" />
           </div>
           {/* table   */}
-          <Table striped bordered hover className="text-start" responsive="sm">
-            <thead>
-              <tr>
-                <th>Location</th>
-                <th>Email</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th className="text-center">Action</th>
-              </tr>
-            </thead>
-
-            {bookingData.map((bData) => (
-              <tbody key={bData?._id}>
+          {isSpinner ? (
+            <Spinner animation="grow" variant="warning" />
+          ) : (
+            <Table
+              striped
+              bordered
+              hover
+              className="text-start"
+              responsive="sm"
+            >
+              <thead>
                 <tr>
-                  <td>{bData?.tripName}</td>
-                  <td>{bData?.email}</td>
-                  <td>{bData?.date}</td>
-                  <td className="d-flex justify-content-around">
-                    <Form.Select
-                      aria-label="Default select example"
-                      className="w-75"
-                      onChange={handleOptionChng}
-                    >
-                      <option>{bData?.status}</option>
-                      <option value="Approved">Approved</option>
-                      <option value="Delivered">Delivered</option>
-                      <option value="Rejected">Rejected</option>
-                    </Form.Select>
-                    <button
-                      onClick={() => handletoOp(bData?._id)}
-                      className="btn"
-                    >
-                      <i className="fas fa-edit"></i>
-                    </button>
-                  </td>
-                  <td className="text-center text-danger trash">
-                    <p onClick={() => handleDelete(bData?._id)}>
-                      <i className="fas fa-trash"></i>
-                    </p>
-                  </td>
+                  <th>Location</th>
+                  <th>Email</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th className="text-center">Action</th>
                 </tr>
-              </tbody>
-            ))}
-          </Table>
+              </thead>
+
+              {bookingData.map((bData) => (
+                <tbody key={bData?._id}>
+                  <tr>
+                    <td>{bData?.tripName}</td>
+                    <td>{bData?.email}</td>
+                    <td>{bData?.date}</td>
+                    <td className="d-flex justify-content-around">
+                      <Form.Select
+                        aria-label="Default select example"
+                        className="w-75"
+                        onChange={handleOptionChng}
+                      >
+                        <option>{bData?.status}</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Rejected">Rejected</option>
+                        <option value="Pending">Pending</option>
+                      </Form.Select>
+                      <button
+                        onClick={() => handletoOp(bData?._id)}
+                        className="btn"
+                      >
+                        <i className="fas fa-edit"></i>
+                      </button>
+                    </td>
+                    <td className="text-center text-danger trash">
+                      <p onClick={() => handleDelete(bData?._id)}>
+                        <i className="fas fa-trash"></i>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              ))}
+            </Table>
+          )}
         </div>
       </div>
     );

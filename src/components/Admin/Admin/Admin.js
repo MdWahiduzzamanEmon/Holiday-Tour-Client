@@ -10,7 +10,7 @@ const Admin = () => {
             <NavLink
               to="/managebooking"
               activeStyle={{
-                color: "#FFCB23",
+                color: "black",
               }}
               className=" text-decoration-none"
             >
@@ -24,13 +24,13 @@ const Admin = () => {
             <NavLink
               to="/addnewevent"
               activeStyle={{
-                color: "#FFCB23",
+                color: "black",
               }}
               className=" text-decoration-none"
             >
               {" "}
               <p className=" py-3 fw-bold fs-6">
-                <i class="fas fa-plus me-2"></i>Add a New Event Ticket
+                <i class="fas fa-plus me-2"></i>Add a New Booking Details
               </p>
             </NavLink>
           </li>

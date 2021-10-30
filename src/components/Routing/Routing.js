@@ -11,6 +11,7 @@ import PrivateRoute from '../Private/PrivateRoute';
 import Admin from "../Admin/Admin/Admin";
 import ManageBooking from '../Admin/ManageBooking/ManageBooking';
 import AddNewEvent from '../Admin/AddNewEvent/AddNewEvent';
+import Footer from '../Footer/Footer';
 
 const Routing = () => {
     return (
@@ -55,6 +56,7 @@ const Routing = () => {
                      <Error/>
                     </Route>
                 </Switch>
+                <Footer/>
             </Router>
         </div>
     );

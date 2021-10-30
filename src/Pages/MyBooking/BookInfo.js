@@ -28,12 +28,30 @@ const BookInfo = ({ bookInfo, handleDelete }) => {
           </div>
           <div className="col-md-3 text-center">
             <p className="text-secondary mb-2 text-start">Status-</p>
-            <h5 className="fs-6 bg-info status-width p-1 rounded-pill">{status}</h5>
+            <h5
+              className={
+                status === "Rejected"
+                  ? "fs-6 bg-danger text-white status-width p-1 rounded-pill"
+                  : "fs-6 bg-info status-width p-1 rounded-pill"
+              }
+            >
+              {status}
+            </h5>
           </div>
           <div className="col-md-3">
-            <button className="btn btn-warning" onClick={handleDelete}>
-              cancel
-            </button>
+            {status === "Approved" ? (
+              <button
+                className="btn btn-warning fw-bold"
+                onClick={handleDelete}
+                disabled
+              >
+                Cancel
+              </button>
+            ) : (
+              <button className="btn btn-warning fw-bold" onClick={handleDelete}>
+                Cancel
+              </button>
+            )}
           </div>
         </div>
       </div>

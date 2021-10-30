@@ -40,7 +40,7 @@
    width: 80%;
    margin: 0 auto;
 }
-.booking-form input{
+.booking-form input,textarea{
  border-top: 0;
  border-left: 0;
  border-right: 0;
