@@ -34,7 +34,10 @@ const [comments,setComments]=useState([])
                   alt=""
                   className="rounded-circle border"
                 />
-                <p className="py-md-4">{comment.comment}</p>
+                <div>
+                  {" "}
+                  <p className="py-md-4">{comment.comment.slice(0,90)+"..."}</p>
+                </div>
               </div>
             </Carousel.Item>
           ))}

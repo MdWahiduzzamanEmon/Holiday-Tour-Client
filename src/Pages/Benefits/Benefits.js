@@ -14,19 +14,19 @@ const Benefits = () => {
             </div>
             <div className="col-md-6 text-start fw-bold text-secondary">
               <h5 className="text-uppercase py-4 text-warning">benefits-</h5>
-              <p>
+              <p className=" ms-md-0 ms-5">
                 <i className="fas fa-plane-departure text-info me-3"></i>Reduces
                 stress...
               </p>
-              <p>
+              <p className=" ms-md-0 ms-5">
                 <i className="fas fa-plane-departure text-info me-3"></i>
                 Increases creativity...
               </p>
-              <p>
+              <p className=" ms-md-0 ms-5">
                 <i className="fas fa-plane-departure text-info me-3"></i>
                 Improves low moods...
               </p>
-              <p>
+              <p className=" ms-md-0 ms-5">
                 <i className="fas fa-plane-departure text-info me-3"></i>
                 Strengthens relationships...
               </p>

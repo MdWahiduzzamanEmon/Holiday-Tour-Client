@@ -4,9 +4,12 @@ import service1 from "../../../images/service-1.png";
 import service4 from "../../../images/service-4.png";
 import service2 from "../../../images/service-2.png";
 import service3 from "../../../images/service-3.png";
+import bg from "../../../images/Slider-Purple-Bg.svg";
 const OurService = () => {
     return (
-      <div>
+      <div
+        style={{ backgroundImage: `url(${bg})`, backgroundRepeat: "no-repeat" }}
+      >
         <div className="container">
           <section>
             <h2 className="fw-bold text-uppercase py-2">Our Services</h2>
@@ -21,9 +24,7 @@ const OurService = () => {
                   </div>
                   <div>
                     <h5 className="text-uppercase">accommodation</h5>
-                    <p>
-                      convenient arrangement; a settlement or compromise
-                    </p>
+                    <p>Convenient arrangement; a settlement or compromise</p>
                   </div>
                 </div>
                 <div className="col-lg-6 d-flex text-start my-4">
@@ -33,7 +34,7 @@ const OurService = () => {
                   <div>
                     <h5 className="text-uppercase">TRIP ADVISER</h5>
                     <p>
-                      convenient arrangement; a settlement or compromise
+                      Tripadvisor, the world's largest travel guidance platform
                     </p>
                   </div>
                 </div>
@@ -45,7 +46,7 @@ const OurService = () => {
                     <div>
                       <h5 className="text-uppercase">TRANSPORTATION</h5>
                       <p>
-                        convenient arrangement; a settlement or compromise
+                        The movement of goods and persons from place to place
                       </p>
                     </div>
                   </div>
@@ -56,9 +57,7 @@ const OurService = () => {
                   </div>
                   <div>
                     <h5 className="text-uppercase">EASY TRIP PLANNER</h5>
-                    <p >
-                      convenient arrangement; a settlement or compromise
-                    </p>
+                    <p>You handle the booking, we'll take it from there</p>
                   </div>
                 </div>
               </div>

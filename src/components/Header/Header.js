@@ -10,7 +10,7 @@ const Header = () => {
 
 const [show, setShow] = React.useState(false);
 
-const handleClose = () => setShow(false);
+  const handleClose = () =>setShow(false);
 const handleShow = () => setShow(true);
 
     return (
@@ -110,7 +110,10 @@ const handleShow = () => setShow(true);
                         </Offcanvas.Title>
                       </Offcanvas.Header>
                       <Offcanvas.Body
-                        style={{ backgroundImage: `url(${offbg})`,backgroundSize:"cover" }}
+                        style={{
+                          backgroundImage: `url(${offbg})`,
+                          backgroundSize: "cover",
+                        }}
                       >
                         <Admin></Admin>
                       </Offcanvas.Body>

@@ -40,7 +40,7 @@ const Destination = ({ place }) => {
                 <Link to={`/bookingForm/${_id}`}>
                   {" "}
                   <button className="btn btn-warning mt-4 fw-bold">
-                    <i className="fas fa-ticket-alt me-3"></i>Buy Now
+                    <i className="fas fa-ticket-alt me-2"></i>Buy Now
                   </button>
                 </Link>
               </div>
