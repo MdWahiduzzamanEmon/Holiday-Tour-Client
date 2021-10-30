@@ -8,6 +8,7 @@ import Register from '../Form/Register/Register';
 import Header from '../Header/Header';
 import Home from '../Home/Home/Home';
 import PrivateRoute from '../Private/PrivateRoute';
+import Admin from "../Admin/Admin/Admin";
 
 const Routing = () => {
     return (
@@ -27,9 +28,18 @@ const Routing = () => {
                     <Route exact path="/register">
                      <Register/>
                     </Route>
-                    <Route exact path="/myBooking">
-                     <MyBooking/>
+                    <Route exact path="/aboutus">
+                     <Register/>
                     </Route>
+                    <Route exact path="/contactus">
+                     <Register/>
+                    </Route>
+                    <Route exact path="/admin">
+                     <Admin />
+                    </Route>
+                    <PrivateRoute exact path="/myBooking">
+                     <MyBooking/>
+                    </PrivateRoute>
                     <PrivateRoute exact path="/bookingForm/:id">
                      <Booking/>
                     </PrivateRoute>

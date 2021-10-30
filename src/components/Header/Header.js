@@ -1,10 +1,17 @@
 import React from 'react';
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, Offcanvas } from "react-bootstrap";
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import logo from '../../images/logo.png'
+import Admin from '../Admin/Admin/Admin'
 const Header = () => {
   const { user, logOut } = useAuth();
+
+const [show, setShow] = React.useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+
     return (
       <div>
         <Navbar collapseOnSelect expand="lg" bg="white" fixed="top">
@@ -37,6 +44,28 @@ const Header = () => {
                 >
                   My Booking
                 </Nav.Link>
+                <Nav.Link
+                  as={NavLink}
+                  to="/aboutus"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#3598DB",
+                  }}
+                  className="fw-bold mx-3"
+                >
+                  About
+                </Nav.Link>
+                <Nav.Link
+                  as={NavLink}
+                  to="/contactus"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "#3598DB",
+                  }}
+                  className="fw-bold mx-3"
+                >
+                  Contact
+                </Nav.Link>
               </Nav>
               <Nav>
                 {user.uid ? (
@@ -57,6 +86,24 @@ const Header = () => {
                     />
                   )}
                 </div>
+
+                <div>
+                  {" "}
+                  <button variant="primary" onClick={handleShow} className=" btn mt-2 fw-bold btn-outline-info text-dark ms-3">
+                    Admin
+                  </button>
+                  <Offcanvas show={show} onHide={handleClose}>
+                    <Offcanvas.Header closeButton>
+                      <Offcanvas.Title>
+                        <h3>Admin Pannel</h3>
+                      </Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                     <Admin></Admin>
+                    </Offcanvas.Body>
+                  </Offcanvas>
+                </div>
+
                 {user.uid && (
                   <button className=" btn" onClick={logOut}>
                     <i className="fas fs-5 fa-sign-out-alt"></i>
