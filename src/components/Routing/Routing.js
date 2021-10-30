@@ -14,6 +14,7 @@ import AddNewEvent from '../Admin/AddNewEvent/AddNewEvent';
 import Footer from '../Footer/Footer';
 import Contact from '../Contact/Contact';
 import About from '../About/About';
+import ExploreMore from '../../Pages/ExploreMore/ExploreMore';
 
 const Routing = () => {
     return (
@@ -47,6 +48,9 @@ const Routing = () => {
                     </Route>
                     <Route exact path="/addnewevent">
                      <AddNewEvent />
+                    </Route>
+                    <Route exact path="/exploremore">
+                     <ExploreMore />
                     </Route>
                     <PrivateRoute exact path="/myBooking">
                      <MyBooking/>

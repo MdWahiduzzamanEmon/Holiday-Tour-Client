@@ -4,10 +4,12 @@ import { Form, Row, Spinner } from "react-bootstrap";
 import design from '../../../images/design.png'
 import Destination from '../Destination/Destination';
 import bg from '../../../images/AOL-BG.png'
+import { useHistory } from 'react-router';
 const T_destinations = () => {
     const [places, setPlaces] = useState([]);
     const [isSpinner, setIsSpinner] = useState(true)
-    const [afterSearch,setAfterSearch]=useState([])
+  const [afterSearch, setAfterSearch] = useState([])
+  const history = useHistory();
     useEffect(() => {
         setIsSpinner(true);
         setTimeout(() => {
@@ -50,12 +52,18 @@ const T_destinations = () => {
           ) : (
             <section className="my-4 py-4">
               <Row xs={1} md={2} lg={3} xl={4} className="g-4">
-                {afterSearch?.map((place) => (
+                {afterSearch?.slice(0,8).map((place) => (
                   <Destination key={place?._id} place={place} />
                 ))}
               </Row>
             </section>
           )}
+
+          <section >
+            <button className="btn btn-warning fw-bold mb-5 mt-3" onClick={() => {
+              history.push('/exploremore')
+            }}>Explore More</button>
+          </section>
         </div>
       </div>
     );

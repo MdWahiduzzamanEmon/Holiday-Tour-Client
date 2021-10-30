@@ -3,7 +3,9 @@ import { Carousel } from 'react-bootstrap';
 import  sliderImg_2 from '../../../images/slider-img-2.jpg'
 import  sliderImg_3 from '../../../images/slider-img-3.jpg'
 import  sliderImg_4 from '../../../images/slider-img-4 (1).jpg'
+import LearnMore from '../../LearnMore/LearnMore';
 const TopBanner = () => {
+  const [modalShow, setModalShow] = React.useState(false);
     return (
       <div className="mt-5 pt-4">
         {/* //Carousel */}
@@ -20,7 +22,13 @@ const TopBanner = () => {
                 I wish you didn’t have to go so soon – but I am so glad for the
                 time we had together. Have a safe journey!
               </p>
-              <button className="btn btn-warning">Learn More</button>
+              <button
+                className="btn btn-warning fw-bold"
+                onClick={() => setModalShow(true)}
+              >
+                Learn More
+              </button>
+              <LearnMore show={modalShow} onHide={() => setModalShow(false)} />
             </div>
           </Carousel.Item>
           <Carousel.Item interval={1000}>
@@ -36,7 +44,13 @@ const TopBanner = () => {
                 If you’re nervous on your journey, just think about me – because
                 I will absolutely be thinking about you. Travel safe, darling.
               </p>
-              <button className="btn btn-warning">Learn More</button>
+              <button
+                className="btn btn-warning fw-bold"
+                onClick={() => setModalShow(true)}
+              >
+                Learn More
+              </button>
+              <LearnMore show={modalShow} onHide={() => setModalShow(false)} />
             </div>
           </Carousel.Item>
           <Carousel.Item>
@@ -51,7 +65,13 @@ const TopBanner = () => {
                 I wish you didn’t have to go so soon – but I am so glad for the
                 time we had together. Have a safe journey!
               </p>
-              <button className="btn btn-warning">Learn More</button>
+              <button
+                className="btn btn-warning fw-bold"
+                onClick={() => setModalShow(true)}
+              >
+                Learn More
+              </button>
+              <LearnMore show={modalShow} onHide={() => setModalShow(false)} />
             </div>
           </Carousel.Item>
         </Carousel>
