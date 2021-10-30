@@ -6,7 +6,8 @@ import bg from "../../../images/AOL-BG.png";
 import design from "../../../images/design.png";
 const AddNewEvent = () => {
       const { register, handleSubmit,reset } = useForm();
-    const onSubmit = (data) => {
+  const onSubmit = (data) => {
+      data["rating"] = parseFloat(data["rating"]);
         axios.post("https://fast-ocean-49814.herokuapp.com/destination",data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -39,7 +40,7 @@ const AddNewEvent = () => {
                 />
                 <input
                   {...register("rating")}
-                  type="number"
+                  type="text"
                   placeholder="Rate"
                 />
               </div>

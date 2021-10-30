@@ -30,7 +30,21 @@ const Admin = () => {
             >
               {" "}
               <p className=" py-3 fw-bold fs-6">
-                <i class="fas fa-plus me-2"></i>Add a New Booking Details
+                <i className="fas fa-plus me-2"></i>Add a New Booking Details
+              </p>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/managedata"
+              activeStyle={{
+                color: "black",
+              }}
+              className=" text-decoration-none"
+            >
+              {" "}
+              <p className=" py-3 fw-bold fs-6">
+                <i className="fas fa-cog me-2"></i>Manage Data
               </p>
             </NavLink>
           </li>

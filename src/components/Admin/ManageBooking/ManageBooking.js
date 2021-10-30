@@ -23,7 +23,6 @@ const ManageBooking = () => {
     },[])
 
     const handleOptionChng = (e) => {
-        
         const updateStatus = e.target.value;
         const newData = { ...bookingData };
         newData.status = updateStatus;
