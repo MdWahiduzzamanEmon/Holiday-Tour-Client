@@ -51,9 +51,9 @@ const Routing = () => {
             <Route exact path="/addnewevent">
               <AddNewEvent />
             </Route>
-            <Route exact path="/exploremore">
+            <PrivateRoute exact path="/exploremore">
               <ExploreMore />
-            </Route>
+            </PrivateRoute>
             <Route exact path="/managedata">
               <ManageData />
             </Route>
