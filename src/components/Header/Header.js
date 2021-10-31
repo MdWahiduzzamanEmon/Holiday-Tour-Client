@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import logo from '../../images/logo.png'
 import Admin from '../Admin/Admin/Admin'
-import offbg from "../../images/slider-img-1.jpg";
 const Header = () => {
   const { user, logOut } = useAuth();
 
@@ -110,10 +109,7 @@ const handleShow = () => setShow(true);
                         </Offcanvas.Title>
                       </Offcanvas.Header>
                       <Offcanvas.Body
-                        style={{
-                          backgroundImage: `url(${offbg})`,
-                          backgroundSize: "cover",
-                        }}
+                        className="offcanvus_bg"
                       >
                         <Admin></Admin>
                       </Offcanvas.Body>

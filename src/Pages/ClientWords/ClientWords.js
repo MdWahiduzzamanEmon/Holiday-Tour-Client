@@ -21,7 +21,7 @@ const [comments,setComments]=useState([])
         </div>
         <Carousel className="carousel-control mx-auto mb-5 py-5">
           {comments.map((comment) => (
-            <Carousel.Item interval={2000}>
+            <Carousel.Item interval={2000} key={ comment?._id}>
               <img
                 className="d-block slider-img-2"
                 src={cmnt}
