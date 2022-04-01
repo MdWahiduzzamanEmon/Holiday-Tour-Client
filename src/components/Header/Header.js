@@ -15,7 +15,7 @@ const handleShow = () => setShow(true);
     return (
       <div>
         <Navbar collapseOnSelect expand="lg" bg="white" fixed="top">
-          <Container>
+          <Container fluid>
             {/* nav logo */}
             <Navbar.Brand as={Link} to="/">
               <img src={logo} alt="" />
